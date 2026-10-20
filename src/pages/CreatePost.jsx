@@ -12,7 +12,7 @@ const CreatePost = () => {
 
     const formData = new FormData(e.target);
     try {
-      const res = await axios.post("http://localhost:3000/create-posts", formData, {
+      const res = await axios.post("https://show-posts-feed.onrender.com/create-posts", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       console.log(res.data);
