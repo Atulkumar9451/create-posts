@@ -11,17 +11,18 @@ const CreatePost = () => {
     e.preventDefault()
 
     const formData = new FormData(e.target);
+    try {
+      const res = await axios.post("http://localhost:3000/create-posts", formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      });
+      console.log(res.data);
+      navigate('/feed');
+    } catch (err) {
+      console.error(err);
+      alert("Error creating post");
+    }
+  };
 
-    axios.post("http://localhost:3000/", formData)
-      .then((res) => {
-        navigate('/feed')
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("error creating post")
-
-      })
-  }
 
   return (
     <section className='create-post-section'>
