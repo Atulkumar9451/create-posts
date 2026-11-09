@@ -12,9 +12,9 @@ const CreatePost = () => {
 
     const formData = new FormData(e.target);
     try {
-      const res = await axios.post("https://create-posts-backend.onrender.com", formData, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
+      const res = await axios.post("https://create-posts-backend.onrender.com/create-posts", formData, {
+  headers: { "Content-Type": "multipart/form-data" }
+});
       console.log(res.data);
       navigate('/feed');
     } catch (err) {
