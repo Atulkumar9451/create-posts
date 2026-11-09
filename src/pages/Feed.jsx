@@ -12,7 +12,7 @@ function Feed() {
 
 
   useEffect(() => {
-    const res = axios.get('https://show-posts-feed.onrender.com/posts')
+    const res = axios.get('https://create-posts-backend.onrender.com/posts')
       .then(() => {
         setPosts(res.data.posts)
       })
