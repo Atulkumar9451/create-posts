@@ -12,12 +12,15 @@ function Feed() {
 
 
   useEffect(() => {
-    const res = axios.get('https://create-posts-backend.onrender.com/posts')
-      .then(() => {
+    axios.get('https://create-posts-backend.onrender.com/posts')
+      .then((res) => { 
+        console.log(res.data);
         setPosts(res.data.posts)
       })
-
-  }, [])  //depedency arr jo khali hai ise jaruru likhna hota hai
+      .catch((err) => {
+        console.error("Error fetching posts:", err);
+      })
+  }, []) 
 
 
 
